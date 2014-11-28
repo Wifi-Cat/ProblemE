@@ -164,6 +164,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="recentsLimit" value="5" />
     <property name="dynamic.classpath" value="false" />
+    <property name="FullScreen" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -427,7 +428,7 @@
       <created>1417203751033</created>
       <updated>1417203751033</updated>
       <workItem from="1417203753355" duration="332000" />
-      <workItem from="1417204174944" duration="3334000" />
+      <workItem from="1417204174944" duration="3342000" />
     </task>
     <task id="LOCAL-00001" summary="This could be something">
       <created>1417207043558</created>
@@ -437,7 +438,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3666000" />
+    <option name="totallyTimeSpent" value="3674000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="886" extended-state="6" />
