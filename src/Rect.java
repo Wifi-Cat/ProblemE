@@ -1,6 +1,6 @@
 public class Rect {
 
-    private int x0, y0, x1, y1;
+    public int x0, y0, x1, y1;
 
     public Rect(int x0, int y0, int x1, int y1) {
         this.x0 = x0;
@@ -12,7 +12,21 @@ public class Rect {
     public long getArea() {
         int dx = x1 - x0;
         int dy = y1 - y0;
-        return dx * dy;
+        long area = dx * dy;
+        if (dx < 0 && dy < 0) {
+            return -area;
+        } else {
+            return area;
+        }
+    }
+
+    public boolean equals(Rect r) {
+        return this.x0 == r.x0 && this.y0 == r.y0 && this.x1 == r.x1 && this.y1 == r.y1;
+    }
+
+    @Override
+    public String toString() {
+        return "(" + x0 + ", " + y0 + ") (" + x1 + ", " + y1 + ")";
     }
 
     public static Rect normalize(int x0, int y0, int x1, int y1) {
