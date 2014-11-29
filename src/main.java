@@ -32,32 +32,28 @@ public class Main {
         }
 
         // now find how many share the same intersections
-        int[] intersectionCounts = new int[intersections.size()];
-
-        // initialize to ones
-        for (int i = 0; i < intersectionCounts.length; i++) {
-            intersectionCounts[i] = 1;
-        }
-        // loop over all the rectangles
-        for (Rect r0 : intersections) {
-            for (Rect r1 : intersections) {
-                if (r0 == r1) {
-                    continue;
-                }
-                if (r0.equals(r1)) {
-                    intersectionCounts[intersections.indexOf(r0)]++;
+        int intersectionCount = 1;
+        while (intersections.size() > 0) {
+            List<Rect> tmp = new LinkedList<Rect>();
+            for (int i = 0; i < intersections.size(); i++) {
+                for (int j = i + 1; j < intersections.size(); j++) {
+                    Rect r0 = intersections.get(i);
+                    Rect r1 = intersections.get(j);
+                    if (r0.equals(r1)) {
+                        tmp.add(r0);
+                    } else {
+                        Rect intersection = Rect.getIntersection(r0, r1);
+                        if (intersection.getArea() > 0) {
+                            tmp.add(intersection);
+                        }
+                    }
                 }
             }
+            intersections = tmp;
+            intersectionCount++;
         }
 
-        // find the max intersection count (if no intersections exist the loop will not run)
-        int max = 0;
-        for (int i = 0; i < intersectionCounts.length; i++) {
-            if (max < intersectionCounts[i]) {
-                max = intersectionCounts[i];
-            }
-        }
         // the max intersection count excludes the original layer, so add one to get the final result
-        System.out.println(max + 1);
+        System.out.println(intersectionCount);
     }
 }
