@@ -45,31 +45,8 @@ public class Rect {
         return new Rect(x0, y0, x1, y1);
     }
     
-    public static Rect getIntersection(Rect r0, Rect r1) {
-        int xlow, xhigh, ylow, yhigh;
-        // get x coordinates
-        if (r1.p0.x > r0.p0.x) {
-            xlow = r1.p0.x;
-        } else {
-            xlow = r0.p0.x;
-        }
-        if (r1.p1.x > r0.p1.x) {
-            xhigh = r0.p1.x;
-        } else {
-            xhigh = r1.p1.x;
-        }
-        // get y coordinates
-        if (r1.p0.y > r0.p0.y) {
-            ylow = r1.p0.y;
-        } else {
-            ylow = r0.p0.y;
-        }
-        if (r1.p1.y > r0.p1.y) {
-            yhigh = r0.p1.y;
-        } else {
-            yhigh = r1.p1.y;
-        }
-        return new Rect(xlow, ylow, xhigh, yhigh);
+    public static int getArea(Point p1, Point p2) {
+        return (p2.x - p1.x) * (p2.y - p1.y);
     }
     
     /**
@@ -78,7 +55,7 @@ public class Rect {
      * @return
      */
     public boolean inRect(Point p) {
-        if ((p1.x - p.x) * (p1.y - p.y) < 1) // do they touch only at a corner?
+        if (Rect.getArea(p, p1) < 1)// do they touch only at a corner?
             return false;
         return p0.x <= p.x && p.x <= p1.x && p0.y <= p.y && p.y <= p1.y;
     }
