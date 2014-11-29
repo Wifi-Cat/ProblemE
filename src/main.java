@@ -21,29 +21,40 @@ public class Main {
             }
 
             // compute the intersection rectangles over each of these rectangles
-            // keep doing this until there are no rectangles left
-            int thickestLayer = 0;
-            while (rects.size() > 0) {
-                List<Rect> tmp = new LinkedList<Rect>();
-                for (int i = 0; i < rects.size(); i++) {
-                    Rect r0 = rects.get(i);
-                    for (int j = i + 1; j < rects.size(); j++) {
-                        Rect r1 = rects.get(j);
-                        if (r0.equals(r1)) {
-                            continue;
-                        }
-                        // what do here?
-                        Rect intersect = Rect.getIntersection(r0, r1);
-                        if (intersect.getArea() > 0) {
-                            tmp.add(intersect);
-                        }
+            List<Rect> intersections = new LinkedList<Rect>();
+            for (int i = 0; i < rects.size(); i++) {
+                Rect r0 = rects.get(i);
+                for (int j = i + 1; j < rects.size(); j++) {
+                    Rect r1 = rects.get(j);
+                    // what do here?
+                    Rect intersect = Rect.getIntersection(r0, r1);
+                    if (intersect.getArea() > 0) {
+                        intersections.add(intersect);
                     }
                 }
-                rects = tmp;
-                thickestLayer++;
             }
 
-            System.out.println(thickestLayer);
+            // for each point in the input, check how many rectangles it's inside of
+            int[] counts = new int[rects.size() * 4];
+            for (int i = 0; i < rects.size(); i++) {
+                Rect r0 = rects.get(i);
+                for (int j = i + 1; j < rects.size(); j++) {
+                    Rect r1 = rects.get(j);
+                    if (r1.inRect(r0.p0)) {
+                        counts[i * 2]++;
+                    }
+                    if (r1.inRect(r0.p1)) {
+                        counts[i * 2 + 1]++;
+                    }
+                }
+            }
+            int max = 0;
+            for (int i = 0; i < counts.length; i++) {
+                if (max < counts[i]) {
+                    max = counts[i];
+                }
+            }
+            System.out.println(max);
         }
     }
 }

@@ -1,17 +1,15 @@
 public class Rect {
 
-    public int x0, y0, x1, y1;
+    public Point p0, p1;
 
     public Rect(int x0, int y0, int x1, int y1) {
-        this.x0 = x0;
-        this.y0 = y0;
-        this.x1 = x1;
-        this.y1 = y1;
+        this.p0 = new Point(x0, y0);
+        this.p1 = new Point(x1, y1);
     }
 
     public long getArea() {
-        int dx = x1 - x0;
-        int dy = y1 - y0;
+        int dx = p1.x - p0.x;
+        int dy = p1.y - p0.y;
         long area = dx * dy;
         if (dx < 0 && dy < 0) {
             return -area;
@@ -21,12 +19,12 @@ public class Rect {
     }
 
     public boolean equals(Rect r) {
-        return this.x0 == r.x0 && this.y0 == r.y0 && this.x1 == r.x1 && this.y1 == r.y1;
+        return this.p0.x == r.p0.x && this.p0.y == r.p0.y && this.p1.x == r.p1.x && this.p1.y == r.p1.y;
     }
 
     @Override
     public String toString() {
-        return "(" + x0 + ", " + y0 + ") (" + x1 + ", " + y1 + ")";
+        return "(" + p0.x + ", " + p0.y + ") (" + p1.x + ", " + p1.y + ")";
     }
 
     public static Rect normalize(int x0, int y0, int x1, int y1) {
@@ -48,27 +46,36 @@ public class Rect {
     public static Rect getIntersection(Rect r0, Rect r1) {
         int xlow, xhigh, ylow, yhigh;
         // get x coordinates
-        if (r1.x0 > r0.x0) {
-            xlow = r1.x0;
+        if (r1.p0.x > r0.p0.x) {
+            xlow = r1.p0.x;
         } else {
-            xlow = r0.x0;
+            xlow = r0.p0.x;
         }
-        if (r1.x1 > r0.x1) {
-            xhigh = r0.x1;
+        if (r1.p1.x > r0.p1.x) {
+            xhigh = r0.p1.x;
         } else {
-            xhigh = r1.x1;
+            xhigh = r1.p1.x;
         }
         // get y coordinates
-        if (r1.y0 > r0.y0) {
-            ylow = r1.y0;
+        if (r1.p0.y > r0.p0.y) {
+            ylow = r1.p0.y;
         } else {
-            ylow = r0.y0;
+            ylow = r0.p0.y;
         }
-        if (r1.y1 > r0.y1) {
-            yhigh = r0.y1;
+        if (r1.p1.y > r0.p1.y) {
+            yhigh = r0.p1.y;
         } else {
-            yhigh = r1.y1;
+            yhigh = r1.p1.y;
         }
         return new Rect(xlow, ylow, xhigh, yhigh);
+    }
+
+    /**
+     * Tests if point p is inside of this rectangle, including the edges
+     * @param p
+     * @return
+     */
+    public boolean inRect(Point p) {
+        return p0.x <= p.x && p.x <= p1.x && p0.y <= p.y && p.y <= p1.y;
     }
 }
