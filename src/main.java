@@ -33,6 +33,10 @@ public class Main {
                             continue;
                         }
                         // what do here?
+                        Rect intersect = Rect.getIntersection(r0, r1);
+                        if (intersect.getArea() > 0) {
+                            tmp.add(intersect);
+                        }
                     }
                 }
                 rects = tmp;
