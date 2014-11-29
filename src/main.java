@@ -26,8 +26,8 @@ public class Main {
             while (rects.size() > 0) {
                 List<Rect> tmp = new LinkedList<Rect>();
                 for (int i = 0; i < rects.size(); i++) {
+                    Rect r0 = rects.get(i);
                     for (int j = i + 1; j < rects.size(); j++) {
-                        Rect r0 = rects.get(i);
                         Rect r1 = rects.get(j);
                         if (r0.equals(r1)) {
                             continue;
