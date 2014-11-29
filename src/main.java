@@ -1,3 +1,5 @@
+package NotSewDifficult;
+
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
@@ -10,16 +12,16 @@ public class Main {
         // not sure what the exact format of input is...
         Scanner sc = new Scanner(System.in);
         int numRects;
-
+        
         while ((numRects = sc.nextInt()) != -1) {
             List<Rect> rects = new LinkedList<Rect>();
-
+            
             // read all the rects
             for (int i = 0; i < numRects; i++) {
                 int x0 = sc.nextInt(), y0 = sc.nextInt(), x1 = sc.nextInt(), y1 = sc.nextInt();
                 rects.add(Rect.normalize(x0, y0, x1, y1));
             }
-
+            
             // compute the intersection rectangles over each of these rectangles
             List<Rect> intersections = new LinkedList<Rect>();
             for (int i = 0; i < rects.size(); i++) {
@@ -33,17 +35,20 @@ public class Main {
                     }
                 }
             }
-
+            
             // for each point in the input, check how many rectangles it's inside of
             int[] counts = new int[rects.size() * 4];
+            for (int i = 0; i < counts.length; i++) {
+                counts[i] = 1; // always at least one quilt piece down
+            }
             for (int i = 0; i < rects.size(); i++) {
                 Rect r0 = rects.get(i);
                 for (int j = i + 1; j < rects.size(); j++) {
                     Rect r1 = rects.get(j);
-                    if (r1.inRect(r0.p0)) {
+                    if (r0.inRect(r1.p0)) {
                         counts[i * 2]++;
                     }
-                    if (r1.inRect(r0.p1)) {
+                    if (r0.inRect(r1.p1)) {
                         counts[i * 2 + 1]++;
                     }
                 }
