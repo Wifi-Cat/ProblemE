@@ -22,7 +22,7 @@ public class Main {
 
             // compute the intersection rectangles over each of these rectangles
             // keep doing this until there are no rectangles left
-            int thickestLayer = 1;
+            int thickestLayer = 0;
             while (rects.size() > 0) {
                 List<Rect> tmp = new LinkedList<Rect>();
                 for (int i = 0; i < rects.size(); i++) {
