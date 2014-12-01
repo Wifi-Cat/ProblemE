@@ -1,4 +1,8 @@
-package NotSewDifficult;
+/**
+ * Created by Vance Miller on 11/28/2014. :PPPPPPPP
+ * Sarah  rusty
+ * maxdaum Gay Master lmao XD
+ */
 
 public class Rect {
     
@@ -9,10 +13,10 @@ public class Rect {
         this.p1 = new Point(x1, y1);
     }
     
-    public long getArea() {
-        int dx = p1.x - p0.x;
-        int dy = p1.y - p0.y;
-        long area = dx * dy;
+    public double getArea() {
+        double dx = p1.x - p0.x;
+        double dy = p1.y - p0.y;
+        double area = dx * dy;
         if (dx < 0 && dy < 0) {
             return -area;
         } else {
@@ -45,8 +49,8 @@ public class Rect {
         return new Rect(x0, y0, x1, y1);
     }
     
-    public static int getArea(Point p1, Point p2) {
-        return (p2.x - p1.x) * (p2.y - p1.y);
+    public static double getArea(Point p1, Point p2) {
+    	return ((p2.x - p1.x) * (p2.y - p1.y));
     }
     
     /**
@@ -55,8 +59,6 @@ public class Rect {
      * @return
      */
     public boolean inRect(Point p) {
-        if (Rect.getArea(p, p1) < 1)// do they touch only at a corner?
-            return false;
         return p0.x <= p.x && p.x <= p1.x && p0.y <= p.y && p.y <= p1.y;
     }
 }
