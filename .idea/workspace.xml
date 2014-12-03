@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05cfc2d4-14f5-48e8-a444-af8354d0241f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/output" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/input" afterPath="$PROJECT_DIR$/src/input" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ProblemE.iws" />
@@ -50,11 +48,11 @@
       <file leaf-file-name="Main.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5491573" vertical-offset="0" max-vertical-offset="1207">
-              <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.35814607" vertical-offset="0" max-vertical-offset="1207">
+              <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#384#390#0" expanded="true" />
+                <element signature="e#382#388#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -106,9 +104,9 @@
       <list>
         <option value="$PROJECT_DIR$/src/Rect.java" />
         <option value="$PROJECT_DIR$/src/Point.java" />
-        <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/output" />
         <option value="$PROJECT_DIR$/src/input" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
       </list>
     </option>
   </component>
@@ -458,7 +456,7 @@
       <workItem from="1417223343086" duration="1737000" />
       <workItem from="1417226178305" duration="5991000" />
       <workItem from="1417550427356" duration="3295000" />
-      <workItem from="1417642099668" duration="3350000" />
+      <workItem from="1417642099668" duration="3761000" />
     </task>
     <task id="LOCAL-00001" summary="This could be something">
       <created>1417207043558</created>
@@ -476,11 +474,15 @@
       <created>1417556930166</created>
       <updated>1417556930166</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="better testcases&#10;">
+      <created>1417646804744</created>
+      <updated>1417646804744</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18047000" />
+    <option name="totallyTimeSpent" value="18458000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="800" height="870" extended-state="0" />
@@ -564,7 +566,8 @@
     <MESSAGE value="I'm thinking something like this... not working yet" />
     <MESSAGE value="merged" />
     <MESSAGE value="testcase&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="testcase&#10;" />
+    <MESSAGE value="better testcases&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="better testcases&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -582,7 +585,7 @@
           <caret line="11" column="44" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#384#390#0" expanded="true" />
+            <element signature="e#382#388#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -617,7 +620,7 @@
           <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#384#390#0" expanded="true" />
+            <element signature="e#382#388#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -644,7 +647,7 @@
           <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#384#390#0" expanded="true" />
+            <element signature="e#382#388#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -671,7 +674,7 @@
           <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#384#390#0" expanded="true" />
+            <element signature="e#382#388#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -726,11 +729,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5491573" vertical-offset="0" max-vertical-offset="1207">
-          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.35814607" vertical-offset="0" max-vertical-offset="1207">
+          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#384#390#0" expanded="true" />
+            <element signature="e#382#388#0" expanded="true" />
           </folding>
         </state>
       </provider>
